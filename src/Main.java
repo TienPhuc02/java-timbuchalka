@@ -2,31 +2,12 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        Car car =new Car();
-//        car.make="Porche";//error vì không thể đặt giá trị các thuộc tính vì các thuộc tính trong class Car đang private
-//        System.out.println(car.make);// error vì không thể truy cập các giá trị thuộc tính trong class vì  các thuộc tính đang để private
-        System.out.println("make = " + car.getMake()); // lấy được giá trị private trong class vì có hàm trả về giá trị đó để public
-
-        //setter
-
-        car.setMake(null);
-        car.setModel("Carrera");
-        car.setDoors(3);
-        car.setConvertible(true);
-        car.setColor("black");
-        car.describeCar();
-
-
-
-        //example
-        Car targa =new Car();
-        targa.setMake("Porsche");
-        targa.setModel("Targa");
-        targa.setDoors(4);
-        targa.setConvertible(false);
-        targa.setColor("red");
-        targa.describeCar();
-
+    Account newAccount=new Account();
+    newAccount.setSoDienThoai("0888363810");
+    newAccount.getSoTaiKhoan();
+    newAccount.setEmail("dtp2352002@gmail.com");
+    newAccount.guiTienVaoTaiKhoan(1000000);
+    newAccount.rutTienKhoiTaiKhoan(1500000);
+    System.out.println(newAccount.getSoDu());
     }
 }
