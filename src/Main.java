@@ -7,7 +7,26 @@ public class Main {
 //        car.make="Porche";//error vì không thể đặt giá trị các thuộc tính vì các thuộc tính trong class Car đang private
 //        System.out.println(car.make);// error vì không thể truy cập các giá trị thuộc tính trong class vì  các thuộc tính đang để private
         System.out.println("make = " + car.getMake()); // lấy được giá trị private trong class vì có hàm trả về giá trị đó để public
+
+        //setter
+
+        car.setMake(null);
+        car.setModel("Carrera");
+        car.setDoors(3);
+        car.setConvertible(true);
+        car.setColor("black");
         car.describeCar();
+
+
+
+        //example
+        Car targa =new Car();
+        targa.setMake("Porsche");
+        targa.setModel("Targa");
+        targa.setDoors(4);
+        targa.setConvertible(false);
+        targa.setColor("red");
+        targa.describeCar();
 
     }
 }
