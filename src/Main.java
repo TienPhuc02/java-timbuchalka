@@ -1,27 +1,52 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class Main extends Object {
+
     public static void main(String[] args) {
-    //inheritance
-    Animal animal =new Animal("Generic Animal","Huge",400);
-    doAnimalStuff(animal ,"slow");
 
-    Dog dog =new Dog();
-    doAnimalStuff(dog,"fast");
-    //null null null....
-    Dog yorkie= new Dog("yorkie" , 15);doAnimalStuff(yorkie,"fast");
-    Dog retriever=new Dog("Labrador Retriever",65,"Floppy","Swimmer");
-    doAnimalStuff(retriever,"slow");
-    Dog wolf = new Dog("Wolf",40);
-    doAnimalStuff(wolf,"slow");
+        Student max = new Student("Max", 21);
+        System.out.println(max);
 
-    Fish goldie =new Fish("GoldFish",0.25,2,3);
-    doAnimalStuff(goldie,"fast");
+        PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy", 8,
+                "Carole");
+        System.out.println(jimmy);
     }
-    public  static void doAnimalStuff(Animal animal,String speed){
-        animal.makeNoise();
-        animal.move(speed);
-        System.out.println(animal);
-        System.out.println("_ _ _ _");
+}
+
+class Student {
+
+    private String name;
+    private int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
+
+    @Override
+    public String toString() {
+        return name + " is " + age;
+//        return "Student{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                '}';
+    }
+}
+
+class PrimarySchoolStudent extends Student {
+
+    private String parentName;
+
+    PrimarySchoolStudent(String name, int age, String parentName) {
+        super(name, age);
+        this.parentName = parentName;
+    }
+
+    @Override
+    public String toString() {
+        return parentName + "'s kid, " + super.toString();
     }
 }
