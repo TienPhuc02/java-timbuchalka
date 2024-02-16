@@ -1,5 +1,5 @@
 public class Animal {
-    private String type;
+    protected String type;//proteced -> dong goi co dieu kien -> cho phep con truy cap vao lop cha
     private String size;
     private double weight;
 

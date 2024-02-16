@@ -20,14 +20,38 @@ public class Dog extends  Animal{
         super("Mutt","Big",50); // goi ham tao cua Animal
     }
 
-    @Override
+
     public void makeNoise() {
-        super.makeNoise();
+        if(type=="Wolf"){
+            System.out.println("ow wooo ! Wolf");
+        }
+        bark();
+//        System.out.println();
     }
 
     @Override
     public void move(String speed) {
         super.move(speed);
-        System.out.println("dog walk");
+//        System.out.println("dog walk");
+        if(speed=="slow"){
+            walk();
+            wagTail();
+        }else {
+            run();
+            bark();
+        }
+        System.out.println();
+    }
+    private void bark(){
+        System.out.println("woof!   ");
+    }
+    private void run(){
+        System.out.println("Dog running....");
+    }
+    private void walk(){
+        System.out.println("Dog walking....");
+    }
+    private void wagTail(){
+        System.out.println("Dog wagTailing....");
     }
 }
