@@ -18,7 +18,6 @@ public class Animal {
     }
 
     public Animal(){
-
     }
     public void move(String speed){
         System.out.println(type +" moves " +speed);
