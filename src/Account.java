@@ -7,6 +7,17 @@ public class Account {
     private String tenKhachHang;
     private String email;
     private String soDienThoai;
+    public Account(){
+        System.out.println("Constructor empty called.");
+    }
+    public Account(int soTaiKhoan,int soDu,String tenKhachHang,String email,String soDienThoai){
+        System.out.println("Account Constructor with parameters called.");
+        this.soTaiKhoan=soTaiKhoan;
+        this.soDu=soDu;
+        this.tenKhachHang=tenKhachHang;
+        this.email=email;
+        this.soDienThoai=soDienThoai;
+    }
     public  void guiTienVaoTaiKhoan(int tienGuiVao){
         this.soDu+=tienGuiVao;
         DecimalFormat formatter = new DecimalFormat("###,###,###"); // Định dạng số
