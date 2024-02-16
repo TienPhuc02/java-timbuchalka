@@ -12,6 +12,12 @@ public class Main {
     System.out.println(newAccount.getSoDu());
 
     Account phucAccount=new Account("Phuc","phucdev235@gmail.com","11122233345");
-        System.out.println(phucAccount.getSoDu());
+    System.out.println(phucAccount.getSoDu());
+
+
+    //Customer
+
+
+
     }
 }
