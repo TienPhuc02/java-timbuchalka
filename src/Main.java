@@ -1,52 +1,25 @@
-public class Main extends Object {
+public class Main {
 
     public static void main(String[] args) {
 
-        Student max = new Student("Max", 21);
-        System.out.println(max);
+        Employee tim = new Employee("Tim", "11/11/1985",
+                "01/01/2020");
+        System.out.println(tim);
+        System.out.println("Age = " + tim.getAge());
+        System.out.println("Pay = " + tim.collectPay());
 
-        PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy", 8,
-                "Carole");
-        System.out.println(jimmy);
-    }
-}
+        SalariedEmployee joe = new SalariedEmployee("Joe", "11/11/1990",
+                "03/03/2020", 35000);
+        System.out.println(joe);
+        System.out.println("Joe's Paycheck = $" + joe.collectPay());
 
-class Student {
+        joe.retire();
+        System.out.println("Joe's Pension check = $" + joe.collectPay());
 
-    private String name;
-    private int age;
-
-    Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-//    @Override
-//    public String toString() {
-//        return super.toString();
-//    }
-
-    @Override
-    public String toString() {
-        return name + " is " + age;
-//        return "Student{" +
-//                "name='" + name + '\'' +
-//                ", age=" + age +
-//                '}';
-    }
-}
-
-class PrimarySchoolStudent extends Student {
-
-    private String parentName;
-
-    PrimarySchoolStudent(String name, int age, String parentName) {
-        super(name, age);
-        this.parentName = parentName;
-    }
-
-    @Override
-    public String toString() {
-        return parentName + "'s kid, " + super.toString();
+        HourlyEmployee mary = new HourlyEmployee("Mary", "05/05/1970",
+                "03/03/2021", 15);
+        System.out.println(mary);
+        System.out.println("Mary's Paycheck = $" + mary.collectPay());
+        System.out.println("Mary's Holiday Pay = $" + mary.getDoublePay());
     }
 }
