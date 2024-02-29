@@ -32,6 +32,24 @@ public class Main {
 
         int[] largerArray=Arrays.copyOf(thirdArray,15);
         System.out.println(Arrays.toString(largerArray));
+
+
+
+        String[] sArray ={"Able","Phuc","Zues","Keria","Faker"};
+        Arrays.sort(sArray);
+        System.out.println(Arrays.toString(sArray));
+        if(Arrays.binarySearch(sArray,"Keria")>=0){
+            System.out.println("Found Keria in  the list");
+        }
+
+
+        int[] s1={1,2,3,4,5};
+        int[] s2={1,2,3,4,5};
+        if(Arrays.equals(s1,s2)){
+            System.out.println("Array are equal");
+        }else {
+            System.out.println("Array are not equal");
+        }
     }
     private static int[] getRandomArray(int len){
         Random random =new Random();
