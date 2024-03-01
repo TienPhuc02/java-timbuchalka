@@ -1,46 +1,23 @@
 package dev.array;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] scannerArray= getIntegers(5);
-        System.out.println(Arrays.toString(scannerArray));
-        printArray(scannerArray);
-        int[] sortedArray=sortIntegers(scannerArray);
-        System.out.println(Arrays.toString(sortedArray));
-    }
-    private static int[] getIntegers(int len){
-        Scanner scanner = new Scanner(System.in);
-        int[] scannerArray=new int[len];
-        for(int i=0; i<len;i++){
-            scannerArray[i]=scanner.nextInt();
-        }
-        return  scannerArray;
-    }
-    private static void printArray(int[] array){
-        for(int i=0;i<array.length;i++){
-            System.out.println("Element "+ i+  " contents " + array[i]);
-        }
+        int[] myIntArray=new int[5];
+        int[] anotherArray=myIntArray;
+        System.out.println("myIntArray=" + Arrays.toString(myIntArray));
+        System.out.println("anotherArray=" + Arrays.toString(anotherArray));
 
+        anotherArray[0]=1;
+        modifyArray(myIntArray);
+        System.out.println("after change another array =" + Arrays.toString(anotherArray));
+        System.out.println("after change my int  array =" + Arrays.toString(myIntArray));
     }
-    private static int[] sortIntegers(int[] array){
-        int[] sortedArray=Arrays.copyOf(array,array.length);
-        int temp;
-        boolean flag =true;
-        while (flag){
-            flag=false;
-            for(int i =0; i<sortedArray.length-1;i++){
-                if(sortedArray[i]<sortedArray[i+1]){
-                    temp=sortedArray[i+1];
-                    sortedArray[i+1]=sortedArray[i];
-                    sortedArray[i]=temp;
-                    flag=true;
-                }
-            }
-        }
-        return sortedArray;
+
+    public static void modifyArray(int[] array ){
+        array[1]=2;
+
     }
 }
