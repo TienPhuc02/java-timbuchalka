@@ -1,40 +1,43 @@
 package dev.array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String... args) {
-
-    int[] returnedArray =readIntegers();
-        System.out.println(Arrays.toString(returnedArray));
-        int returnMin=findMind(returnedArray);
-        System.out.println("min =" + returnMin);
+        int inputLength=readInteger();
+        int[] elementArray=readElements(inputLength);
 
     }
 
-    public static int[] readIntegers() {
+    private static int readInteger() {
+
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("_".repeat(20));
-
-        String input =scanner.nextLine();
-        String[] splits=input.split(",");
-        int[] values =new int[splits.length];
-        for(int i=0 ; i<splits.length;i++){
-            values[i]=Integer.parseInt(splits[i].trim());
-        }
-        return  values;
+        System.out.print("Enter count: ");
+        int count = scanner.nextInt();
+        return count;
     }
 
-    public static int findMind(int[] array){
-        int min =Integer.MAX_VALUE;
-        for(int el :array){
-            if(el <min){
-                min=el;
+    private static int[] readElements(int count) {
+
+        Scanner scanner = new Scanner(System.in);
+        int[] array = new int[count];
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("Enter a number: ");
+            int number = scanner.nextInt();
+            array[i] = number;
+        }
+        return array;
+    }
+
+    private static int findMin(int[] array) {
+
+        int cmv = Integer.MAX_VALUE;                 // 1
+        for (int i = 0; i < array.length; i++) {     // 2
+            if (array[i] < cmv) {                    // 3
+                cmv = array[i];                      // 4
             }
         }
-        return min;
+        return cmv;
     }
 }
