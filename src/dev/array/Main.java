@@ -1,74 +1,34 @@
 package dev.array;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String... args) {
-        int[] returnedArray = readIntegers();
-        System.out.println(Arrays.toString(returnedArray));
+        int[][] array2 = new int[4][4];
+        System.out.println(Arrays.toString(array2));
+        System.out.println("array2.length = " + array2.length);
 
-//        int returnedMin = findMin(returnedArray);
-//        System.out.println("min = " + returnedMin);
-
-//        reverse(returnedArray);
-//        System.out.println("Final: " + Arrays.toString(returnedArray));
-
-        int[] reversedCopy = reverseCopy(returnedArray);
-        System.out.println("After reverse " + Arrays.toString(returnedArray));
-        System.out.println("reversedCopy " + Arrays.toString(reversedCopy));
-    }
-
-    private static int[] readIntegers() {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a list of integers, separated by commas:");
-        String input = scanner.nextLine();
-
-        String[] splits = input.split(",");
-        int[] values = new int[splits.length];
-
-        for (int i = 0; i < splits.length; i++) {
-            values[i] = Integer.parseInt(splits[i].trim());
+        for (int[] outer : array2) {
+            System.out.println(Arrays.toString(outer));
         }
 
-        return values;
-    }
-
-    private static int findMin(int[] array) {
-
-        int min = Integer.MAX_VALUE;
-        for (int el : array) {
-            if (el < min) {
-                min = el;
+        for (int i = 0; i < array2.length; i++) {
+            var innerArray = array2[i];
+            for (int j = 0; j < innerArray.length; j++) {
+                System.out.print(array2[i][j] + " ");
+                array2[i][j] = (i * 10) + (j + 1);
             }
+            System.out.println();
         }
 
-        return min;
-    }
-
-    private static void reverse(int[] array) {
-
-        int maxIndex = array.length - 1;
-        int halfLength = array.length / 2;
-
-        for (int i = 0; i < halfLength; i++) {
-            int temp = array[i];
-            array[i] = array[maxIndex - i];
-            array[maxIndex - i] = temp;
-            System.out.println("--> " + Arrays.toString(array));
-        }
-    }
-
-    private static int[] reverseCopy(int[] array) {
-
-        int[] reversedArray = new int[array.length];
-        int maxIndex = array.length - 1;
-        for (int el : array) {
-            reversedArray[maxIndex--] = el;
+        for (var outer : array2) {
+            for (var element : outer) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
         }
 
-        return reversedArray;
+        System.out.println(Arrays.deepToString(array2));
     }
 }
